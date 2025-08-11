@@ -22,6 +22,11 @@ public class InvestmentTheme {
     @Column(name = "investment_horizon")
     private String investmentHorizon;
 
+	public InvestmentTheme() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -71,9 +76,4 @@ public class InvestmentTheme {
 		this.investmentHorizon = investmentHorizon;
 	}
 
-	public InvestmentTheme() {
-		super();
-	}
-    
-    
 }

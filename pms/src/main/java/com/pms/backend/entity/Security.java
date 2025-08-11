@@ -1,5 +1,5 @@
 package com.pms.backend.entity;
-
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 @Entity
@@ -40,30 +40,11 @@ public class Security {
     @Column(name = "series")
     private String series;
 
-    @ManyToOne
-    @JoinColumn(name = "asset_class_id")
+    
+    @ManyToOne(fetch = FetchType.EAGER) // or EAGER if needed
+    @JoinColumn(name = "asset_class_id", nullable = false)
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private AssetClass assetClass;
-
-	public Security(Long id, String exchange, String symbol, String name, String isin, String sector, String industry,
-			String currency, String country, String securityCode, String series, AssetClass assetClass) {
-		super();
-		this.id = id;
-		this.exchange = exchange;
-		this.symbol = symbol;
-		this.name = name;
-		this.isin = isin;
-		this.sector = sector;
-		this.industry = industry;
-		this.currency = currency;
-		this.country = country;
-		this.securityCode = securityCode;
-		this.series = series;
-		this.assetClass = assetClass;
-	}
-
-	public Security() {
-		super();
-	}
 
 	public Long getId() {
 		return id;
@@ -161,5 +142,26 @@ public class Security {
 		this.assetClass = assetClass;
 	}
 
-    
+	public Security(Long id, String exchange, String symbol, String name, String isin, String sector, String industry,
+			String currency, String country, String securityCode, String series, AssetClass assetClass) {
+		super();
+		this.id = id;
+		this.exchange = exchange;
+		this.symbol = symbol;
+		this.name = name;
+		this.isin = isin;
+		this.sector = sector;
+		this.industry = industry;
+		this.currency = currency;
+		this.country = country;
+		this.securityCode = securityCode;
+		this.series = series;
+		this.assetClass = assetClass;
+	}
+
+	public Security() {
+		super();
+	}
+	
+	
 }

@@ -42,6 +42,28 @@ public class Portfolio {
     @Column(name = "status")
     private String status;
 
+	public Portfolio() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Portfolio(Long id, String name, String type, String currency, String benchmark, String exchange,
+			BigDecimal initialInvestment, BigDecimal currentValue, String rebalancingFrequency, InvestmentTheme theme,
+			String status) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.type = type;
+		this.currency = currency;
+		this.benchmark = benchmark;
+		this.exchange = exchange;
+		this.initialInvestment = initialInvestment;
+		this.currentValue = currentValue;
+		this.rebalancingFrequency = rebalancingFrequency;
+		this.theme = theme;
+		this.status = status;
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -130,28 +152,6 @@ public class Portfolio {
 		this.status = status;
 	}
 
-	public Portfolio(Long id, String name, String type, String currency, String benchmark, String exchange,
-			BigDecimal initialInvestment, BigDecimal currentValue, String rebalancingFrequency, InvestmentTheme theme,
-			String status) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.type = type;
-		this.currency = currency;
-		this.benchmark = benchmark;
-		this.exchange = exchange;
-		this.initialInvestment = initialInvestment;
-		this.currentValue = currentValue;
-		this.rebalancingFrequency = rebalancingFrequency;
-		this.theme = theme;
-		this.status = status;
-	}
-
-	public Portfolio() {
-		super();
-	}
-
-
-	// this is the new line i have added in my branch
+    // Getters and setters
     
 }

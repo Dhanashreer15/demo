@@ -28,6 +28,25 @@ public class AssetClass {
     @Column(name = "investment_horizon")
     private String investmentHorizon;
 
+
+	public AssetClass() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public AssetClass(Long id, String className, String description, String subClassName, String subClassDescription,
+			String risk, String investmentHorizon) {
+		super();
+		this.id = id;
+		this.className = className;
+		this.description = description;
+		this.subClassName = subClassName;
+		this.subClassDescription = subClassDescription;
+		this.risk = risk;
+		this.investmentHorizon = investmentHorizon;
+	}
+
+
 	public Long getId() {
 		return id;
 	}
@@ -84,21 +103,5 @@ public class AssetClass {
 		this.investmentHorizon = investmentHorizon;
 	}
 
-	public AssetClass(Long id, String className, String description, String subClassName, String subClassDescription,
-			String risk, String investmentHorizon) {
-		super();
-		this.id = id;
-		this.className = className;
-		this.description = description;
-		this.subClassName = subClassName;
-		this.subClassDescription = subClassDescription;
-		this.risk = risk;
-		this.investmentHorizon = investmentHorizon;
-	}
 
-	public AssetClass() {
-		super();
-	}
-
-    
 }

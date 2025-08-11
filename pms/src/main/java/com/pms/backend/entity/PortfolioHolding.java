@@ -31,6 +31,23 @@ public class PortfolioHolding {
     @Column(name = "equity_category")
     private String equityCategory;
 
+	public PortfolioHolding() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public PortfolioHolding(Long id, Portfolio portfolio, Security security, Integer quantity, BigDecimal price,
+			BigDecimal value, String equityCategory) {
+		super();
+		this.id = id;
+		this.portfolio = portfolio;
+		this.security = security;
+		this.quantity = quantity;
+		this.price = price;
+		this.value = value;
+		this.equityCategory = equityCategory;
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -86,22 +103,4 @@ public class PortfolioHolding {
 	public void setEquityCategory(String equityCategory) {
 		this.equityCategory = equityCategory;
 	}
-
-	public PortfolioHolding(Long id, Portfolio portfolio, Security security, Integer quantity, BigDecimal price,
-			BigDecimal value, String equityCategory) {
-		super();
-		this.id = id;
-		this.portfolio = portfolio;
-		this.security = security;
-		this.quantity = quantity;
-		this.price = price;
-		this.value = value;
-		this.equityCategory = equityCategory;
-	}
-
-	public PortfolioHolding() {
-		super();
-	}
-
-    
 }
