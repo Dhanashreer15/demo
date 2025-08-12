@@ -46,6 +46,7 @@ public class PortfolioController {
     public ResponseEntity<Void> deletePortfolio(@PathVariable Long id) {
         portfolioService.deletePortfolio(id);
         return ResponseEntity.noContent().build();
+        
     }
 
     
